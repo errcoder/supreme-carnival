@@ -1,0 +1,103 @@
+https://velog.io/@boorook/React-Typescript-Vite-TailwindCSS-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85
+
+https://larainfo.com/blogs/install-setup-vite-react-typescript-tailwind-css-3
+
+https://larainfo.com/blogs/install-setup-vite-react-typescript-tailwind-css-3
+
+https://www.freecodecamp.org/news/how-to-install-tailwindcss-in-react/
+
+https://github.com/creativetimofficial/tailwind-starter-kit/blob/main/Landing%20Page/html-landing-page/landing.html
+
+boorook.log
+
+로그인
+boorook.log
+
+로그인
+React, Typescript, Vite, TailwindCSS 프로젝트 세팅
+boorook·2022년 6월 13일
+ESLintPrettierReacttailwindCSStypescriptvite프로젝트
+7
+1. React + Vite + Typescript 환경 세팅
+2. TailwindCSS 세팅
+3. Prettier, Eslint 설정
+참고 자료
+React
+목록 보기
+1/3
+
+
+post-thumbnail
+
+프로젝트에서 React, Typescript, Vite, TailwindCSS, Eslint, Prettier를 적용하는 방법을 알아보자
+
+1. React + Vite + Typescript 환경 세팅
+터미널에서 다음 명령어들을 입력한다.
+$ npm init vite@latest todo -- --template react-ts
+$ cd front
+$ npm i
+$ npm run dev
+여기서는 프로젝트 이름을 front로 설정하였다.
+
+2. TailwindCSS 세팅
+터미널에서 다음 명령어들을 입력한다.
+$ npm install -D tailwindcss postcss autoprefixer
+$ npx tailwindcss init -p
+tailwind.config.js 파일을 다음과 같이 수정한다.
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+index.css 파일에 다음 코드를 추가한다.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+3. Prettier, Eslint 설정
+Prettier와 Eslint도 적용하고 싶다면 아래와 같이 적용한다
+
+터미널에 다음 명령어를 입력하여 패키지를 설치한다.
+$ npm i -D prettier eslint-plugin-prettier eslint-config-prettier
+front 디렉토리에 .prettierrc 파일을 생성하고 다음 코드를 추가한다.
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "semi": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "arrowParens": "always"
+}
+front 디렉토리에 .eslintrc 파일을 생성하고 다음 코드를 추가한다.
+{
+  "extends": [
+    "plugin:prettier/recommended",
+    "react-app",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/interface-name-prefix": "on",
+    "@typescript-eslint/explicit-function-return-type": "on",
+    "@typescript-eslint/explicit-module-boundary-types": "on",
+    "@typescript-eslint/no-explicit-any": "on"
+  }
+}
+참고 자료
+https://larainfo.com/blogs/install-setup-vite-react-typescript-tailwind-css-3
+
+https://javascript.plainenglish.io/set-up-your-environment-for-vite-react-and-tailwind-css-1cac0e3fbf96
+
+https://wonillism.tistory.com/271
+profile
+Boo Sung Jun
+다음 포스트
+Vite React TypeScript PWA 만들기 + AWS Amplify 배포
+
+0개의 댓글
+댓글을 작성하세요
+댓글 작성
+Powered by GraphCDN, the GraphQL CDN
